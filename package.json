@@ -1,0 +1,33 @@
+{
+  "name": "maplibregl-mapbox-request-transformer",
+  "version": "0.0.1",
+  "description": "Transform mapbox:// urls in MapboxGL Styles for use in MapLibreGL.",
+  "main": "src/index.js",
+  "module": "src/index.js",
+  "exports": "./src/index.js",
+  "types": "src/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rowan Winsemius",
+  "license": "MIT",
+  "files": [
+    "src/index.js",
+    "src/index.d.ts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rowanwins/maplibregl-mapbox-request-transformer"
+  },
+  "keywords": [
+    "mapbox",
+    "mapbox-gl",
+    "mapbox-gl-js",
+    "maplibre",
+    "maplibre-gl",
+    "maplibre-gl-js",
+    "react-map-gl",
+    "react"
+  ]
+}
