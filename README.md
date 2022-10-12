@@ -6,12 +6,12 @@ Also compatible with react-map-gl.
 
 ## Install
 ````
-npm install maplibregl-mapbox-url-transformer --save
+npm install maplibregl-mapbox-request-transformer --save
 ````
 
 ## Usage
 ````
-import { isMapboxURL, transformMapboxUrl } from 'maplibregl-mapbox-url-transformer'
+import { isMapboxURL, transformMapboxUrl } from 'maplibregl-mapbox-request-transformer'
 
 const mapboxKey = 'pk.123'
 
