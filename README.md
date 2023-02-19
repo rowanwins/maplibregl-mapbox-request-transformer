@@ -4,8 +4,6 @@ By default Mapbox styles are referenced by, and include others to mapbox URLs su
 
 Also compatible with react-map-gl.
 
-When upgrading from MapLibre v1 to >= v2 or react-map-gl, and using this transformer, be advised that Mapbox bills tile requests differently from your previous setup. Any library that is not Mapbox GL JS v1.x.x (or its direct fork MapLibre GL v1.x.x), is not anymore billed with Mapbox GL JS "Map Loads", which includes unlimited Vector Tiles API requests ([see pricing docs](https://docs.mapbox.com/mapbox-gl-js/guides/pricing/)). Rather, every (vector) tile request is billed individually. This could make hosting an often-visited map more expensive.
-
 ## Install
 ````
 npm install maplibregl-mapbox-request-transformer --save
@@ -34,6 +32,9 @@ var map = new maplibregl.Map({
   transformRequest
 });
 ````
+
+## Notes on Mapbox Pricing
+When upgrading from MapLibre v1 to >= v2 or react-map-gl, and using this transformer, be advised that Mapbox bills tile requests using their Vector Tiles API requests. A standard Mapbox GL JS application is billed using the Map Loads API, which includes unlimited Vector Tiles API requests ([see pricing docs](https://docs.mapbox.com/mapbox-gl-js/guides/pricing/)). This billing difference could make hosting an often-visited map more expensive. As of Feb 2023 Mapbox offers 200,000 monthly tile requests on their free tier (see their [pricing page](https://www.mapbox.com/pricing#vector-tiles-api) for current details). 
 
 ## Acknowledgements
 This code was mostly taken and adpted from [here](https://github.com/maplibre/maplibre-gl-js/blob/04ff47d53ec16e17b92475fe9028c1477f6df02f/src/util/mapbox.ts).
