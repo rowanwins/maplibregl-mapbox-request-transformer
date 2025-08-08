@@ -52,9 +52,29 @@ function normalizeSourceURL(url, accessToken) {
   return formatUrl(urlObject, accessToken);
 }
 
-function normalizeSpriteURL(url, format, extension, accessToken) {
+/**
+ * Normalizes a sprite URL.
+ * 
+ * @param {string} url - The original sprite URL.
+ * @param {string} _format - The format (not used in the function).
+ * @param {string} _extension - The extension (not used in the function).
+ * @param {string} accessToken - The access token.
+ * 
+ * @returns {string} - The normalized URL.
+ * 
+ * @throws {Error} Throws an error if the URL cannot be normalized.
+ */
+function normalizeSpriteURL(url, _format, _extension, accessToken) {
+  const urlRegex = /^([a-z0-9\:\/\-]+)(@\d+x)?\.(\w+)$/;
   const urlObject = parseUrl(url);
-  const path = urlObject.path.split('.')
-  urlObject.path = `/styles/v1${path[0]}/sprite.${path[1]}`;
+  const match = url.match(urlRegex);
+
+  if (!match) {
+      throw new Error("Cannot normalize Sprite URL");
+  }
+
+  const [, path, density = "", extension] = match;
+  urlObject.path = `/styles/v1${path}/sprite${density}.${extension}`;
+
   return formatUrl(urlObject, accessToken);
 }
