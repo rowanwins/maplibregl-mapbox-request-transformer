@@ -1,0 +1,5 @@
+node_modules
+debug/node_modules
+debug/.vscode
+package-lock.json
+pnpm-lock.yaml
