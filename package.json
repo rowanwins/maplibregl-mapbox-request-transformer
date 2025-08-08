@@ -1,6 +1,6 @@
 {
   "name": "maplibregl-mapbox-request-transformer",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Transform mapbox:// urls in MapboxGL Styles for use in MapLibreGL.",
   "main": "src/index.js",
   "module": "src/index.js",
